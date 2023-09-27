@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS_Task3</title>
+</head>
+<body style="background-color: #b4d0c2; font-family: Arial, sans-serif;">
+
+    <h1 style="color: #c24b4b;">Calculate Multiplication and Division</h1>
+
+    <!-- Input fields for the user to enter two numbers -->
+    <label for="num1" style="color: #000000;">Enter the first number:</label>
+    <input type="number" id="num1" style="border: 1px solid #000000; padding: 5px;"><br>
+
+    <label for="num2" style="color: #000000;">Enter the second number:</label>
+    <input type="number" id="num2" style="border: 1px solid #000000; padding: 5px;"><br>
+
+    <button onclick="calculate()" style="background-color: #76a719; color: #fff; border: none; padding: 10px 20px; cursor: pointer;">Calculate</button>
+
+    <!-- Display the results here -->
+    <p style="color: #333;">Multiplication Result: <span id="multiplicationResult" style="font-weight: bold; color: #0074d9;"></span></p>
+    <p style="color: #333;">Division Result: <span id="divisionResult" style="font-weight: bold; color: #0074d9;"></span></p>
+
+    <script>
+        function calculate() {
+            // Get the input values from the user
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+
+            // Check if the input values are valid numbers
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers.");
+                return;
+            }
+
+            // Calculate multiplication and division
+            const multiplicationResult = num1 * num2;
+            const divisionResult = num1 / num2;
+
+            // Display the results
+            document.getElementById("multiplicationResult").textContent = multiplicationResult;
+            document.getElementById("divisionResult").textContent = divisionResult;
+        }
+    </script>
+</body>
+</html>
